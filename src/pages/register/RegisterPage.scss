@@ -1,0 +1,51 @@
+.register-form {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #d3d3d3;
+  a {
+    text-align: center;
+    text-decoration: none;
+    color: #1e90ff;
+    background-color: white;
+  }
+
+  p {
+    background-color: white;
+    font-size: 15px;
+  }
+}
+
+.register-component {
+  margin: 0px;
+  padding: 0px;
+  background-color: white;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+
+  input {
+    width: 200px;
+    height: 30px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  .sign-in-btn {
+    background-color: #1e90ff;
+    color: white;
+  }
+  a {
+    text-align: center;
+    text-decoration: none;
+    color: #1e90ff;
+  }
+
+  p {
+    background-color: white;
+    font-size: 15px;
+    margin: 20px 0px;
+  }
+}

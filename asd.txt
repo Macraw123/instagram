@@ -1,0 +1,37 @@
+BEGIN;
+INSERT INTO users (name, username, bio, email, password, verified, google, token) VALUES ('Joko','_jokosentosa', 'Love is not good enough!','admin@insta.com','admin123',true,false,'');
+INSERT INTO users (name, username, bio, email, password, verified, google, token) VALUES ('Will','william_rusdyputra', 'Radish is my life','will@insta.com','will123',true,false,'asd123');
+COMMIT;
+
+BEGIN;
+INSERT INTO stories (userid, created,image,video) VALUES (1, '02-09-2021', '/public/assets/story1.png','/public/assets/story1.mp4');
+INSERT INTO stories (userid, created,image,video) VALUES (2, '03-09-2021', '/public/assets/story2.png','/public/assets/story2.mp4');
+COMMIT;
+
+BEGIN;
+INSERT INTO followers (userid) VALUES (2);
+COMMIT;
+
+BEGIN;
+INSERT INTO posts (caption, video, "like", userid, created) VALUES ('Life is never flat','/public/assets/story2.png',1000, 2, '03-09-2021');
+COMMIT;
+
+BEGIN;
+INSERT INTO saves (postid, useremail) VALUES (1, 'will@insta.com');
+COMMIT;
+
+BEGIN;
+INSERT INTO likes (postid, useremail) VALUES (1, 'will@insta.com');
+COMMIT;
+
+BEGIN;
+INSERT INTO images (postid, imagelink) VALUES (1, '/public/assets/story2.png');
+COMMIT;
+
+BEGIN;
+INSERT INTO comments (comment, userid, postid) VALUES ('BAGUS BANGET', 1 , 1);
+COMMIT;
+
+BEGIN;
+INSERT INTO messages (toemail, fromemail, created, message, image) VALUES ('will@insta.com', 'admin@insta.com','04-09-2021', 'jangan galau', '/public/assets/story2.png');
+COMMIT;
