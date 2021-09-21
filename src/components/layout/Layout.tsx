@@ -17,7 +17,7 @@ export default function Layout({
   return (
     <div className="layout">
       {header ? <Header /> : null}
-      <main> {children} </main>
+      <main style={{ padding: "0px 12px" }}> {children} </main>
       {footer ? <Footer /> : null}
     </div>
   );

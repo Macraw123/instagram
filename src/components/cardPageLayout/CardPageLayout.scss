@@ -6,6 +6,11 @@
   width: 400px;
   margin: 70px auto;
   margin-bottom: 30px;
+  @media screen and (max-width: 450px) {
+    & {
+      width: 100%;
+    }
+  }
 
   .form-container {
     padding: 50px;
