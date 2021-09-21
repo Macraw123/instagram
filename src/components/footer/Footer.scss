@@ -1,8 +1,8 @@
 .footer {
   display: flex;
   justify-content: space-between;
-  background-color: #f9f9f9;
-  color: black;
+  background-color: var(--bg);
+  color: var(--text);
   text-align: center;
   flex-direction: column;
   font-size: 12px;
@@ -27,6 +27,6 @@
 }
 
 .footer-nav ul li a {
-  color: #003569;
+  color: var(--accent);
   text-decoration: none;
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import Logo from "../logo/Logo";
 import "./CardPageLayout.scss";
 
 export default function CardPageLayout({
@@ -13,9 +14,7 @@ export default function CardPageLayout({
   return (
     <div className="main-container">
       <div className="form-container">
-        {withLogo ? (
-          <img className="logo" src="assets/instagram.png" alt="" />
-        ) : null}
+        {withLogo ? <Logo className="logo" /> : null}
 
         {children}
       </div>

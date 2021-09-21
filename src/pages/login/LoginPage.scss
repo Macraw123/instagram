@@ -2,19 +2,19 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: white;
+  background-color: var(--paper);
   text-align: center;
   padding: 20px;
-  border: 1px solid #d3d3d3;
+  border: 1px solid var(--bgForm);
   a {
     text-align: center;
     text-decoration: none;
-    color: #1e90ff;
-    background-color: white;
+    color: var(--accent);
+    background-color: var(--paper);
   }
 
   p {
-    background-color: white;
+    background-color: var(--paper);
     font-size: 15px;
   }
 }
@@ -22,29 +22,30 @@
 .login-component {
   margin: 0px;
   padding: 0px;
-  background-color: white;
+  background-color: var(--paper);
   align-items: center;
   display: flex;
   flex-direction: column;
 
-  input {
+  input,
+  button {
     width: 200px;
     height: 30px;
     margin-bottom: 10px;
     border-radius: 5px;
   }
   .sign-in-btn {
-    background-color: #1e90ff;
-    color: white;
+    background-color: var(--accent);
+    color: var(--paper);
   }
   a {
     text-align: center;
     text-decoration: none;
-    color: #1e90ff;
+    color: var(--accent);
   }
 
   p {
-    background-color: white;
+    background-color: var(--paper);
     font-size: 15px;
     margin: 20px 0px;
   }
