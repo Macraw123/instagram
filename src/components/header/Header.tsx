@@ -8,6 +8,7 @@ import {
   FaUserCircle,
 } from "react-icons/fa";
 import { useLocation } from "react-router-dom";
+import Logo from "../logo/Logo";
 
 interface Props {}
 const authRoutes = ["/forgot_password"];
@@ -17,7 +18,7 @@ export default function Header({}: Props): ReactElement {
   return (
     <div className="main-header">
       <div className="image-logo">
-        <img src="assets/instagram.png" alt="" />
+        <Logo className="logo" />
       </div>
       {!inAuthPage ? (
         <>

@@ -1,5 +1,6 @@
 import React from "react";
 import Logo from "../logo/Logo";
+
 import "./CardPageLayout.scss";
 
 export default function CardPageLayout({

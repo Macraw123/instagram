@@ -2,11 +2,13 @@ import React, { ReactElement } from "react";
 import { Link } from "react-router-dom";
 import CardPageLayout from "src/components/cardPageLayout/CardPageLayout";
 import Layout from "src/components/layout/Layout";
+import { useToggleTheme } from "src/lib/states/theme";
 import "./ForgotPassword.scss";
 
 interface Props {}
 
 export default function ForgotPassword({}: Props): ReactElement {
+  const toggleTheme = useToggleTheme();
   return (
     <Layout footer header>
       <CardPageLayout
@@ -14,9 +16,26 @@ export default function ForgotPassword({}: Props): ReactElement {
           <>
             <div className="forgot-form">
               <Link to="/login">
-                <button className="back-to-login-btn">Back To Login</button>
+                <button
+                  className="back-to-login-btn"
+                  style={{ color: "var(--text)" }}
+                >
+                  Back To Login
+                </button>
               </Link>
             </div>
+
+            <button
+              style={{
+                background: "transparent",
+                border: "0px",
+                fontWeight: "bold",
+                padding: "10px 0px",
+              }}
+              onClick={() => toggleTheme()}
+            >
+              Change Theme
+            </button>
           </>
         }
       >
@@ -48,8 +67,9 @@ export default function ForgotPassword({}: Props): ReactElement {
           <input
             type="button"
             name="btnSign"
-            value="Log In"
+            value="Change Password"
             className="sign-in-btn"
+            style={{ color: "var(--text)" }}
           />
           <Link to="/register">
             <p>Create New Account</p>
