@@ -6,7 +6,7 @@ import { useRecoilState } from "recoil";
 import CardPageLayout from "src/components/cardPageLayout/CardPageLayout";
 import Layout from "src/components/layout/Layout";
 import { auth, provider } from "src/lib/firebase";
-import { SIGNUP } from "src/lib/queries";
+import { SIGNUP } from "src/lib/mutations";
 import { useToggleTheme } from "src/lib/states/theme";
 import userState from "src/lib/states/user";
 import "./RegisterPage.scss";
@@ -24,30 +24,6 @@ export default function RegisterPage({}: Props): ReactElement {
   });
 
   const history = useHistory();
-  const [user, setUser] = useRecoilState(userState);
-
-  useLayoutEffect(() => {
-    const userData = JSON.parse(localStorage.getItem("user") || "{}");
-    if (Object.values(userData).length > 0) {
-      setUser(userData);
-      history.push("/home");
-    }
-  }, [user]);
-
-  function login() {
-    signInWithPopup(auth, provider)
-      .then((result) => {
-        const user = result.user;
-        localStorage.setItem("user", JSON.stringify(user));
-        console.log(user);
-        setUser(user);
-      })
-      .catch((error) => {
-        setformError("Auth Failed");
-        console.log(error);
-      });
-  }
-
   const [signup, { loading, error, data }] = useMutation(SIGNUP);
 
   const handleChange = (e: any) => {
@@ -134,8 +110,7 @@ export default function RegisterPage({}: Props): ReactElement {
             onClick={() => {
               signup({ variables: form })
                 .then((data) => {
-                  localStorage.setItem("user", JSON.stringify(data));
-                  setUser(data);
+                  history.push("/verify_email?email=" + form.userEmail);
                   console.log({ data });
                 })
                 .catch(console.log);
@@ -149,11 +124,6 @@ export default function RegisterPage({}: Props): ReactElement {
               "Sign Up"
             )}
           </button>
-
-          <p>OR</p>
-          <a href="#">
-            <p>Login with Facebook</p>
-          </a>
           <p>
             By Signing, you agree to our terms, Data Policy and Cookies Policy
           </p>

@@ -9,11 +9,18 @@ export const LOGIN = gql`
   }
 `;
 
-export const SIGNUP = gql`
-  mutation AddUser($userEmail: String!, $name: String!, $username: String!, $password: String!){
-    addUser(userEmail: $userEmail, name: $name, username: $username, password: $password){
-        email
-        password
+export const RESEND = gql`
+  query SendEmail($userEmail: String!, $type: String!) {
+    sendEmail(userEmail: $userEmail, type: $type ){
+      email
+    }
   }
-}
+`;
+
+export const FORGOT = gql`
+  query ForgotPassword($userEmail: String!) {
+    forgotPassword(userEmail: $userEmail){
+      email
+    }
+  }
 `;

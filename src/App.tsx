@@ -9,6 +9,10 @@ import Home from "./pages/home/Home";
 import Explore from "./pages/explore/Explore";
 import { client } from "./lib/graphQL";
 import { ApolloProvider } from "@apollo/client";
+import Verified from "./pages/verified/Verified";
+import VerifyEmail from "./pages/verify-email/VerifyEmail";
+import VerifyPassword from "./pages/verify-password/VerifyPassword";
+import VerifiedPassword from "./pages/verified_password/VerifiedPassword";
 
 function App() {
   return (
@@ -32,6 +36,18 @@ function App() {
           </Route>
           <Route path="/explore" exact>
             <Explore />
+          </Route>
+          <Route path="/verify_email" exact>
+            <VerifyEmail />
+          </Route>
+          <Route path="/verified" exact>
+            <Verified />
+          </Route>
+          <Route path="/verify_password" exact>
+            <VerifyPassword />
+          </Route>
+          <Route path="/verified_password" exact>
+            <VerifiedPassword />
           </Route>
           <Route path="*">
             <div>404</div>
