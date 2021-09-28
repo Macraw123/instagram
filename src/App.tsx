@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import logo from "./logo.svg";
 import "./App.scss";
 import { Route, Switch } from "react-router-dom";
@@ -13,8 +13,15 @@ import Verified from "./pages/verified/Verified";
 import VerifyEmail from "./pages/verify-email/VerifyEmail";
 import VerifyPassword from "./pages/verify-password/VerifyPassword";
 import VerifiedPassword from "./pages/verified_password/VerifiedPassword";
+import { useSetRecoilState } from "recoil";
+import userState from "./lib/states/user";
 
 function App() {
+  const setUser = useSetRecoilState(userState);
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    setUser(user ? JSON.parse(user) : null);
+  }, []);
   return (
     <div className="app">
       <ApolloProvider client={client}>

@@ -11,7 +11,9 @@ import {
 import "./Post.scss";
 import Slider from "react-slick";
 
-interface Props {}
+interface Props {
+  post: any;
+}
 
 const settings = {
   infinite: false,
@@ -22,7 +24,7 @@ const settings = {
   // swipeToSlide: true,
 };
 
-export default function Post({}: Props): ReactElement {
+export default function Post({ post }: Props): ReactElement {
   return (
     <Card className="post">
       <div className="post-header">

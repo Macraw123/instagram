@@ -1,0 +1,17 @@
+.story-page{
+    margin-top:10px;
+    // background-color: rgb(255, 255, 255);
+    height:100vh;
+}
+
+.s-close-btn{
+    position: absolute;
+    color:rgb(255, 0, 0);
+    top:20px;
+    right:50px;
+    z-index: 19;
+    Link{
+        color:white;
+        background-color: white;
+    }
+}

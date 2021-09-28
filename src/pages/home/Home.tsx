@@ -6,18 +6,55 @@ import ProfilePic from "../../components/profilePic/ProfilePic";
 import ProfilePicDetails from "../../components/profilePic/ProfilePicDetails";
 import { Link } from "react-router-dom";
 import Post from "../../components/post/Post";
+import { GET_MAIN_POSTS, GET_MAIN_STORY_HEADER } from "../../lib/queries";
+import { useRecoilValue } from "recoil";
+import userState from "../../lib/states/user";
+import { useQuery } from "@apollo/client";
 
-interface Props {}
+export default function Home() {
+  const user = useRecoilValue(userState);
+  const { email } = user || {};
 
-export default function Home({}: Props): ReactElement {
+  const {
+    error: errorPosts,
+    loading: loadingPosts,
+    data: posts,
+  } = useQuery(GET_MAIN_POSTS, {
+    variables: {
+      userid: user?.id,
+    },
+    pollInterval: 2000,
+    skip: !user?.id,
+  });
+  console.log(user, !user?.id);
+  const {
+    error: errorStories,
+    loading: loadingStories,
+    data: stories,
+  } = useQuery(GET_MAIN_STORY_HEADER, {
+    variables: {
+      userid: user?.id,
+    },
+    skip: !user?.id,
+  });
+
+  const loading = loadingStories || loadingPosts;
+
+  if (loading) {
+    return null;
+  }
+  console.log(stories);
+  const storiesData = stories?.getMainStoryUserById || [];
+  const postsData = posts?.getMainPostById || [];
+
   return (
     <Layout header>
       <div className="home-page" style={{ paddingTop: "20px" }}>
         <div className="left-section">
-          <StoryContainer />
+          <StoryContainer stories={storiesData} />
           <div className="post-container">
-            {Array.from({ length: 10 }).map((el) => (
-              <Post />
+            {postsData.map((post: any) => (
+              <Post post={post} />
             ))}
           </div>
         </div>

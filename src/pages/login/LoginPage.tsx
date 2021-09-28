@@ -50,8 +50,8 @@ export default function LoginPage({}: Props): ReactElement {
 
   const [loginLocal, { loading, error, data }] = useLazyQuery(LOGIN, {
     onCompleted: () => {
-      localStorage.setItem("user", JSON.stringify(data));
-      setUser(data);
+      localStorage.setItem("user", JSON.stringify(data.login));
+      setUser(data.login);
     },
   });
 

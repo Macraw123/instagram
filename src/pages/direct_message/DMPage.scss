@@ -1,0 +1,641 @@
+@media (max-width: 378px) {
+  .c-pointer:hover {
+    cursor: pointer;
+  }
+
+  .dm-main-box {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 37% auto;
+    width: 99vw;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 3px;
+    .grey {
+      color: grey;
+    }
+
+    .vv5678 {
+      margin-top: -20px;
+      img {
+        max-width: 15px;
+        max-height: 15px;
+      }
+      img:hover {
+        opacity: 50%;
+      }
+    }
+
+    .back-fading {
+      opacity: 67%;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 4;
+      background-color: black;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .display-new {
+      padding: 2px;
+      box-shadow: 0px -2px 10px 2px rgba(90, 90, 90, 0.4);
+      background-color: white;
+      border-radius: 6px;
+      z-index: 99;
+      top: 20%;
+      left: 50%;
+      position: fixed;
+      border: 1px solid rgb(182, 182, 182);
+      width: 400px;
+      height: 500px;
+      margin-left: -200px;
+
+      .dm-list-user-list {
+        height: 340px;
+        overflow-y: hidden;
+      }
+
+      .dn-input-bar {
+        display: flex;
+        padding-left: 16px;
+        input {
+          width: 80%;
+          border: none;
+          margin-top: 8px;
+        }
+      }
+      .dn-each-user {
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        padding-left: 20px;
+        display: flex;
+        img {
+          border-radius: 50%;
+          width: 40px;
+          margin-right: 13px;
+        }
+      }
+      .dn-each-user:hover {
+        cursor: pointer;
+        background-color: rgb(236, 236, 236);
+      }
+      input:focus {
+        border: none;
+      }
+      div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    }
+    .dm-messaging-header {
+      padding-top: 3px;
+      font-size: 14px;
+      div {
+        padding-top: 3px;
+      }
+    }
+    input {
+      width: 90%;
+      background-color: white;
+      border-radius: 100px;
+      margin-left: 10px;
+      margin-bottom: 10px;
+    }
+
+    input:focus {
+      outline: none;
+      border: 0.3px solid rgb(114, 114, 114);
+    }
+    .dm-list {
+      display: grid;
+      grid-template-rows: 50px auto;
+      .dm-messaging-header {
+        border-bottom: 1px solid rgb(204, 204, 204);
+        border-right: 1px solid rgb(204, 204, 204);
+      }
+    }
+    .chosen-one {
+      background-color: rgb(235, 235, 235);
+    }
+    .dm-messaging {
+      display: grid;
+      grid-template-rows: 50px auto;
+      .dm-messaging-header {
+        border-bottom: 1px solid rgb(204, 204, 204);
+
+        input {
+          margin-top: 10px;
+        }
+      }
+      .dm-chat-box {
+        height: 70vh;
+        overflow: scroll;
+        overflow-x: hidden;
+      }
+    }
+
+    .dm-contact-list {
+      display: flex;
+      flex-direction: column;
+      height: 76vh;
+      overflow: scroll;
+      overflow-x: hidden;
+
+      .dm-contact-each {
+        height: 105px;
+        display: flex;
+        flex-direction: column; //ke kanan
+        line-height: 52px;
+        margin: 5px;
+
+        .contact-name {
+          line-height: 23px;
+          display: flex;
+          flex-direction: column;
+          font-size: 12px;
+          margin-left: 1px;
+          text-align: left;
+        }
+      }
+      img {
+        border-radius: 50%;
+        width: 22px;
+        height: 22px;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .time {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .time span {
+    display: inline-block;
+    border-radius: 3px;
+    text-align: center;
+    padding: 2px 20px;
+  }
+  .message {
+    margin-bottom: 10px;
+  }
+  .message .messageText {
+    text-align: left;
+    img {
+      width: 170px;
+      border-radius: 5px;
+    }
+  }
+  .message.sol {
+    text-align: left;
+    margin-left: 10px;
+
+    .messageText {
+      background-color: #ececec;
+    }
+  }
+  .message.sag {
+    text-align: right;
+    margin-right: 10px;
+  }
+
+  .message .messageText {
+    background-color: rgb(202, 202, 202);
+    vertical-align: text-top;
+    display: inline-block;
+    position: relative;
+    line-height: 20px;
+    max-width: 365px;
+    padding: 10px;
+  }
+  .message.left .userPortrait,
+  .message.sag .messageText {
+    border-radius: 10px 10px 0 10px;
+  }
+  .message.sag .userPortrait,
+  .message.sol .messageText {
+    border-radius: 0px 10px 10px 10px;
+  }
+
+  .message .messageText:before {
+    border-color: transparent rgb(255, 255, 255);
+    border-style: solid;
+    position: absolute;
+    border-width: 0;
+    display: block;
+    content: "";
+    z-index: 1;
+  }
+  .message.sol .messageText:before {
+    border-width: 0 10px 10px 0;
+    left: -10px;
+    top: 0;
+  }
+  .message.sag .messageText:before {
+    border-width: 10px 0 0 10px;
+    right: -10px;
+    top: 30px;
+  }
+  .message .messageText:after {
+    content: attr(data-time);
+    color: rgba(52, 52, 52, 0.5);
+    position: absolute;
+    line-height: 20px;
+    display: block;
+    bottom: 2px;
+    z-index: 1;
+  }
+  .message.sol .messageText:after {
+    margin-left: 5px;
+    left: 100%;
+  }
+  .message.sag .messageText:after {
+    margin-right: 5px;
+    right: 100%;
+  }
+
+  .dm-input {
+    display: flex;
+
+    .dhcp {
+      input {
+        width: 65px;
+        border: none;
+      }
+    }
+
+    button {
+      margin-left: 14px;
+      margin-right: 14px;
+      border: none;
+      background-color: transparent;
+    }
+    button:hover {
+      cursor: pointer;
+    }
+    div {
+      margin-left: 5px;
+      padding-top: 6px;
+      text-align: center;
+      img {
+        margin: auto;
+        display: block;
+      }
+    }
+  }
+
+  .custom-file-input {
+    color: transparent;
+  }
+  .custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  .custom-file-input::before {
+    content: "Media";
+    color: black;
+    display: inline-block;
+    background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+  }
+  .custom-file-input:hover::before {
+    border-color: black;
+  }
+  .custom-file-input:active {
+    outline: 0;
+  }
+  .custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+  }
+
+  //END DM PAGE!
+}
+
+@media (min-width: 400px) {
+  .c-pointer:hover {
+    cursor: pointer;
+  }
+
+  .dm-main-box {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: 32% auto;
+    width: 800px;
+    border: 1px solid rgb(204, 204, 204);
+    border-radius: 3px;
+    .grey {
+      color: grey;
+    }
+
+    .vv5678 {
+      margin-top: -20px;
+      img {
+        max-width: 15px;
+        max-height: 15px;
+      }
+      img:hover {
+        opacity: 50%;
+      }
+    }
+
+    .back-fading {
+      opacity: 67%;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 4;
+      background-color: black;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .display-new {
+      padding: 2px;
+      box-shadow: 0px -2px 10px 2px rgba(90, 90, 90, 0.4);
+      background-color: white;
+      border-radius: 6px;
+      z-index: 99;
+      top: 20%;
+      left: 50%;
+      position: fixed;
+      border: 1px solid rgb(182, 182, 182);
+      width: 400px;
+      height: 500px;
+      margin-left: -200px;
+
+      .dm-list-user-list {
+        height: 340px;
+        overflow-y: hidden;
+      }
+
+      .dn-input-bar {
+        display: flex;
+        padding-left: 16px;
+        input {
+          width: 80%;
+          border: none;
+          margin-top: 8px;
+        }
+      }
+      .dn-each-user {
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        padding-left: 20px;
+        display: flex;
+        img {
+          border-radius: 50%;
+          width: 40px;
+          margin-right: 13px;
+        }
+      }
+      .dn-each-user:hover {
+        cursor: pointer;
+        background-color: rgb(236, 236, 236);
+      }
+      input:focus {
+        border: none;
+      }
+      div {
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+    }
+    .dm-messaging-header {
+      padding-top: 3px;
+      font-size: 14px;
+      div {
+        padding-top: 3px;
+      }
+    }
+    input {
+      width: 90%;
+      background-color: white;
+      border-radius: 100px;
+      margin-left: 10px;
+      margin-bottom: 10px;
+    }
+
+    input:focus {
+      outline: none;
+      border: 0.3px solid rgb(114, 114, 114);
+    }
+    .dm-list {
+      display: grid;
+      grid-template-rows: 50px auto;
+      .dm-messaging-header {
+        border-bottom: 1px solid rgb(204, 204, 204);
+        border-right: 1px solid rgb(204, 204, 204);
+      }
+    }
+    .chosen-one {
+      background-color: rgb(235, 235, 235);
+    }
+    .dm-messaging {
+      display: grid;
+      grid-template-rows: 50px auto;
+      .dm-messaging-header {
+        border-bottom: 1px solid rgb(204, 204, 204);
+
+        input {
+          margin-top: 10px;
+        }
+      }
+      .dm-chat-box {
+        height: 70vh;
+        overflow: scroll;
+        overflow-x: hidden;
+      }
+    }
+
+    .dm-contact-list {
+      display: flex;
+      flex-direction: column;
+      height: 76vh;
+      overflow: scroll;
+      overflow-x: hidden;
+
+      .dm-contact-each {
+        height: 72px;
+        display: flex;
+        flex-direction: row; //ke kanan
+        line-height: 52px;
+        margin: 10px;
+
+        .contact-name {
+          line-height: 23px;
+          display: flex;
+          flex-direction: column;
+          font-size: 12px;
+          margin-left: 18px;
+          text-align: left;
+        }
+      }
+      img {
+        border-radius: 50%;
+        width: 52px;
+        height: 52px;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .time {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .time span {
+    display: inline-block;
+    border-radius: 3px;
+    text-align: center;
+    padding: 2px 20px;
+  }
+  .message {
+    margin-bottom: 10px;
+  }
+  .message .messageText {
+    text-align: left;
+    img {
+      width: 170px;
+      border-radius: 5px;
+    }
+  }
+  .message.sol {
+    text-align: left;
+    margin-left: 10px;
+
+    .messageText {
+      background-color: #ececec;
+    }
+  }
+  .message.sag {
+    text-align: right;
+    margin-right: 10px;
+  }
+
+  .message .messageText {
+    background-color: rgb(202, 202, 202);
+    vertical-align: text-top;
+    display: inline-block;
+    position: relative;
+    line-height: 20px;
+    max-width: 365px;
+    padding: 10px;
+  }
+  .message.left .userPortrait,
+  .message.sag .messageText {
+    border-radius: 10px 10px 0 10px;
+  }
+  .message.sag .userPortrait,
+  .message.sol .messageText {
+    border-radius: 0px 10px 10px 10px;
+  }
+
+  .message .messageText:before {
+    border-color: transparent rgb(255, 255, 255);
+    border-style: solid;
+    position: absolute;
+    border-width: 0;
+    display: block;
+    content: "";
+    z-index: 1;
+  }
+  .message.sol .messageText:before {
+    border-width: 0 10px 10px 0;
+    left: -10px;
+    top: 0;
+  }
+  .message.sag .messageText:before {
+    border-width: 10px 0 0 10px;
+    right: -10px;
+    top: 30px;
+  }
+  .message .messageText:after {
+    content: attr(data-time);
+    color: rgba(52, 52, 52, 0.5);
+    position: absolute;
+    line-height: 20px;
+    display: block;
+    bottom: 2px;
+    z-index: 1;
+  }
+  .message.sol .messageText:after {
+    margin-left: 5px;
+    left: 100%;
+  }
+  .message.sag .messageText:after {
+    margin-right: 5px;
+    right: 100%;
+  }
+
+  .dm-input {
+    display: flex;
+
+    .dhcp {
+      input {
+        width: 65px;
+        border: none;
+      }
+    }
+
+    button {
+      margin-left: 14px;
+      margin-right: 14px;
+      border: none;
+      background-color: transparent;
+    }
+    button:hover {
+      cursor: pointer;
+    }
+    div {
+      margin-left: 5px;
+      padding-top: 6px;
+      text-align: center;
+      img {
+        margin: auto;
+        display: block;
+      }
+    }
+  }
+
+  .custom-file-input {
+    color: transparent;
+  }
+  .custom-file-input::-webkit-file-upload-button {
+    visibility: hidden;
+  }
+  .custom-file-input::before {
+    content: "Media";
+    color: black;
+    display: inline-block;
+    background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 8px;
+    outline: none;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    cursor: pointer;
+    text-shadow: 1px 1px #fff;
+    font-weight: 700;
+    font-size: 10pt;
+  }
+  .custom-file-input:hover::before {
+    border-color: black;
+  }
+  .custom-file-input:active {
+    outline: 0;
+  }
+  .custom-file-input:active::before {
+    background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+  }
+}

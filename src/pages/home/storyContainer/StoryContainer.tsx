@@ -6,12 +6,15 @@ import ProfilePic, { PP_SIZE } from "src/components/profilePic/ProfilePic";
 import { useMemo } from "react";
 import { useRef } from "react";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
-interface Props {}
+interface Props {
+  stories: any[];
+}
 
 const MARGIN_SIZE = 10;
 
-export default function StoryContainer({}: Props): ReactElement {
+export default function StoryContainer({ stories }: Props): ReactElement {
   const containerRef = useRef<HTMLDivElement>(null);
   const [rendered, setRendered] = useState(false);
   useEffect(() => {
@@ -41,12 +44,16 @@ export default function StoryContainer({}: Props): ReactElement {
         className="story-container"
       >
         <Slider {...sliderSettings}>
-          {Array.from({ length: 50 }).map((_, idx) => (
-            <ProfilePic
-              image="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
-              name="Test"
+          {stories.map((story, idx) => (
+            <Link
               key={idx}
-            />
+              to={{ pathname: "/story", state: { userid: story.id } }}
+            >
+              <ProfilePic
+                image="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png"
+                name="Test"
+              />
+            </Link>
           ))}
         </Slider>
       </div>
